@@ -9,8 +9,5 @@
 ?>
 
 <p class="request-demo">
-  <a href="<?php bloginfo('url'); ?>/products/request-a-demo/" class="btn btn--alt request-demo">Request a demo</a>
-</p>
-<p class="request-ebook">
-  <a href="#request-ebook" class="btn request-ebook">Download free e-book</a>
+  <a href="<?php bloginfo('url'); ?>/products/schedule-a-demo/" class="btn btn--alt request-demo">Schedule a Demo</a>
 </p>

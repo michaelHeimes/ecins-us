@@ -12,7 +12,7 @@ $background = get_sub_field('background');
 
 <?php if (have_rows('offerings')) : ?>
   <div class="offering-simple module-spacing--<?php echo $spacing; ?> offering__bg--<?php echo $background; ?>">
-    <div class="wrapper--inner">
+    <div class="wrapper--inner wrapper--narrow">
       <?php if ($title) : ?>
         <h2 class="section-title offering-simple__title"><?php echo $title; ?></h2>
       <?php endif; ?>

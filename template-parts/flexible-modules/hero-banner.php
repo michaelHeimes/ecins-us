@@ -7,12 +7,12 @@
  **/
 
 $image = get_sub_field('hero_image');
-$imageUrl = aq_resize($image['url'], 2000, 600, true, true, true);
+$imageUrl = aq_resize($image['url'], 2882, 1126, true, true, true);
 ?>
-<header class="hero-banner" style="background-image: url(<?php echo $imageUrl; ?>);">
+<header class="hero-banner orientation-<?php the_sub_field('copy_orientation');?>" style="background-image: url(<?php echo $imageUrl; ?>);">
   <div class="wrapper hero-banner__container">
-    <?php if (get_sub_field('hero_title')) : ?>
-      <h1 class="page-title hero-banner__title"><?php the_sub_field('hero_title'); ?></h1>
+    <?php if (get_sub_field('hero_copy')) : ?>
+      <div class="page-title hero-banner__title"><?php the_sub_field('hero_copy'); ?></div>
     <?php else : ?>
       <h1 class="page-title hero-banner__title"><?php the_title(); ?></h1>
     <?php endif; ?>

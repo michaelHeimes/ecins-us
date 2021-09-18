@@ -41,6 +41,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_614391f31a688",
+                    "label": "Product Sub-title",
+                    "name": "product_sub-title",
+                    "type": "text",
+                    "instructions": "This it the main product sub-title",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_5fd09ca5bd156",
                     "label": "Short Product Title",
                     "name": "product_title_short",
@@ -68,7 +87,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "100",
                         "class": "",
                         "id": ""
                     },
@@ -166,5 +185,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Add the products module that sets icons, colour, link and short blurb",
-    "modified": 1614660508
+    "modified": 1631818289
 }

@@ -20,6 +20,9 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<?php wp_head(); ?>
 </head>
@@ -36,8 +39,16 @@
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'sixheads'); ?></a>
 
 			<div class="header-utilities">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/usa.png" />
 				<?php get_template_part('template-parts/search/search-header'); ?>
 				<?php get_template_part('template-parts/navigation/client-login'); ?>
+				<?php
+				wp_nav_menu(array(
+					'theme_location' => 'utility',
+					'menu_id'        => 'utility-menu',
+					'container'			 => false,
+				));
+				?>				
 			</div>
 
 			<header id="masthead" class="site-header wrapper--outer">

@@ -1,0 +1,50 @@
+:root { 
+  --apple: #57b947;
+  --black: #000000;
+  --dove-gray: #6d6e71;
+  --flamingo: #ec5339;
+  --matisse: #1d6a8a;
+  --pacific-blue: #00a5c6;
+  --rouge: #953673;
+  --sea-buckthorn: #f99e29;
+  --white: #ffffff;
+ 
+  --font-size-l: 26px;
+  --font-size-m: 22px;
+  --font-size-xl: 48px;
+ 
+  --font-family-helvetica_neue: "Helvetica Neue", Helvetica;
+  --font-family-helveticaneue-bold: "HelveticaNeue-Bold", Helvetica;
+  --font-family-helveticaneue-light: "HelveticaNeue-Light", Helvetica;
+  --font-family-helveticaneue-medium: "HelveticaNeue-Medium", Helvetica;
+  --font-family-roboto: "Roboto", Helvetica;
+}
+.helveticaneue-medium-dove-gray-26px {
+  color: var(--dove-gray);
+  font-family: var(--font-family-helvetica_neue);
+  font-size: var(--font-size-l);
+}
+
+.helveticaneue-medium-dove-gray-26px-2 {
+  color: var(--dove-gray);
+  font-family: var(--font-family-helveticaneue-medium);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.roboto-medium-white-22px {
+  color: var(--white);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.helveticaneue-light-black-26px {
+  color: var(--black);
+  font-family: var(--font-family-helveticaneue-light);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 300;
+}

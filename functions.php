@@ -48,6 +48,7 @@ if (!function_exists('sixheads_setup')) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(array(
+			'utility' => esc_html__('Utility', 'sixheads'),
 			'primary' => esc_html__('Primary', 'sixheads'),
 			'mobile' => esc_html__('Mobile', 'sixheads'),
 			'footer' => esc_html__('Footer', 'sixheads'),
@@ -151,7 +152,7 @@ add_action('wp_enqueue_scripts', 'sixheads_scripts');
 // Add Webfonts
 function add_web_fonts()
 {
-	wp_enqueue_style('sixheads-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap', false);
+	wp_enqueue_style('sixheads-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap', false);
 }
 
 add_action('wp_enqueue_scripts', 'add_web_fonts');
@@ -172,9 +173,27 @@ add_filter('the_excerpt', 'sp_read_more_custom_excerpt');
 function sp_read_more_custom_excerpt($text)
 {
 	if (strpos($text, '[&hellip;]')) {
-		$excerpt = str_replace('[&hellip;]', '<a class="more-link" href="' . get_permalink() . '"> more &rarr;</a>', $text);
+		$excerpt = str_replace('[&hellip;]', '<div><a class="more-link" href="' . get_permalink() . '"> More 
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Homepage-Dev" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="bevel">
+        <g id="ECINS-Homepage" transform="translate(-628.000000, -4549.000000)" stroke="#1A6A89" stroke-width="2">
+            <g id="Group-7" transform="translate(577.000000, 4542.000000)">
+                <polyline id="Path" transform="translate(55.000000, 14.000000) rotate(180.000000) translate(-55.000000, -14.000000) " points="58 8 52 14 58 20"></polyline>
+            </g>
+        </g>
+    </g>
+</svg></a></div>', $text);
 	} else {
-		$excerpt = $text . '<a class="more-link" href="' . get_permalink() . '"> more &rarr;</a>';
+		$excerpt = $text . '<div><a class="more-link" href="' . get_permalink() . '"> More 
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Homepage-Dev" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="bevel">
+        <g id="ECINS-Homepage" transform="translate(-628.000000, -4549.000000)" stroke="#1A6A89" stroke-width="2">
+            <g id="Group-7" transform="translate(577.000000, 4542.000000)">
+                <polyline id="Path" transform="translate(55.000000, 14.000000) rotate(180.000000) translate(-55.000000, -14.000000) " points="58 8 52 14 58 20"></polyline>
+            </g>
+        </g>
+    </g>
+</svg></a></div>';
 	}
 	return $excerpt;
 }
@@ -185,7 +204,7 @@ function sp_read_more_custom_excerpt($text)
 function tiny_mce_remove_unused_formats($init)
 {
 	// Add block format elements you want to show in dropdown
-	$init['block_formats'] = 'Paragraph=p;Heading=h2;Subheading=h3;';
+	$init['block_formats'] = 'Paragraph=p;Hero Copy=h1;Heading=h2;Subheading=h3;';
 	return $init;
 }
 add_filter('tiny_mce_before_init', 'tiny_mce_remove_unused_formats');

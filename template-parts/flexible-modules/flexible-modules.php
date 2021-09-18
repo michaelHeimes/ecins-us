@@ -32,6 +32,10 @@ if (have_rows('flexible_content')) :
 
       get_template_part('template-parts/flexible-modules/rich-text');
 
+    elseif (get_row_layout() == 'word_art') :
+
+      get_template_part('template-parts/flexible-modules/word-art');
+
     elseif (get_row_layout() == 'products') :
 
       get_template_part('template-parts/flexible-modules/products');

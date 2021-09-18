@@ -1,4 +1,6 @@
-<div class="wrapper--inner slider--testimonials">
+<h2 class="section-title offering-simple__title text-center"><?php the_sub_field('heading');?></h2>
+
+<div class="wrapper--inner wrapper--narrow slider--testimonials">
   <?php
   // the query
   $args = array(

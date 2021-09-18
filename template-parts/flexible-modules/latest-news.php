@@ -13,7 +13,7 @@ $spacing = get_sub_field('spacing');
 <?php
 if ($showNews) { ?>
   <div class="latest-news module-spacing--<?php echo $spacing; ?>">
-    <div class="wrapper--inner">
+    <div class="wrapper--inner wrapper--narrow">
       <h2 class="section-title"><?php echo $title; ?></h2>
 
       <div class="posts__list">
