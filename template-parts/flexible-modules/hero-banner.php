@@ -9,16 +9,31 @@
 $image = get_sub_field('hero_image');
 $imageUrl = aq_resize($image['url'], 2882, 1126, true, true, true);
 ?>
-<header class="hero-banner orientation-<?php the_sub_field('copy_orientation');?>" style="background-image: url(<?php echo $imageUrl; ?>);">
+<header class="hero-banner">
   <div class="wrapper hero-banner__container">
-    <?php if (get_sub_field('hero_copy')) : ?>
-      <div class="page-title hero-banner__title"><?php the_sub_field('hero_copy'); ?></div>
-    <?php else : ?>
-      <h1 class="page-title hero-banner__title"><?php the_title(); ?></h1>
-    <?php endif; ?>
-
+	  <div class="inner">
+	  		<div class="half left">
+			    <?php if (get_sub_field('hero_copy')) : ?>
+			      <div class="page-title hero-banner__title"><?php the_sub_field('hero_copy'); ?></div>
+			    <?php else : ?>
+			      <h1 class="page-title hero-banner__title"><?php the_title(); ?></h1>
+			    <?php endif; ?>
+	  		</div>
+	  		
+	  		<div class="half right">
+		   <?php 
+			if( !empty( $image ) ): ?>
+			    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+			<?php endif; ?>
+	  		</div>
+		   
+	  </div>
+	  
+	<?php if( is_front_page() ):?>
     <div class="hero-banner__btns">
       <?php get_template_part('template-parts/demo-or-ebook/demo-ebook-cta'); ?>
     </div>
+    <?php endif;?>
+    
   </div>
 </header>

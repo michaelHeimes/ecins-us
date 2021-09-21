@@ -10,13 +10,13 @@ $spacing = get_sub_field('spacing');
 
 <?php if (have_rows('offerings')) : ?>
   <div class="offering-product module-spacing--<?php echo $spacing; ?>">
-    <div class="wrapper--inner">
+    <div class="wrapper--inner wrapper--narrow">
       <?php while (have_rows('offerings')) : the_row();
         $title = get_sub_field('title');
         $icon = get_sub_field('icon');
         $content = get_sub_field('details');
         $image = get_sub_field('image');
-        $imageUrl = aq_resize($image['url'], 670, 510, true, true, true);
+        $imageUrl = aq_resize($image['url'], 498, 316, true, true, true);
       ?>
         <article class="offering-product__item">
           <div class="offering-product__img">

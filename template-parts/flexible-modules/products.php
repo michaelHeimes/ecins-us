@@ -37,7 +37,7 @@ if (get_sub_field('products_show') == 'detailed') :
 else :
 
   if (have_rows('products_module', 'option')) : ?>
-    <section class="products-simple-section">
+    <section class="products-simple-section module">
 	    <div class="wrapper--narrow">
 		      <?php if ($title) : ?>
 		        <h2 class="section-title offering-simple__title"><?php echo $title; ?></h2>

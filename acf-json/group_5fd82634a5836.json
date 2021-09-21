@@ -23,30 +23,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5fd826c0504e4",
-                            "label": "Hero Image",
-                            "name": "hero_image",
-                            "type": "image",
-                            "instructions": "Add the background image for the hero. Size: 2200px wide by 640px high.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "60",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
                             "key": "field_61436c1d26d2f",
                             "label": "Hero Copy",
                             "name": "hero_copy",
@@ -66,26 +42,28 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_61436cdc5bd60",
-                            "label": "Copy Orientation",
-                            "name": "copy_orientation",
-                            "type": "button_group",
+                            "key": "field_5fd826c0504e4",
+                            "label": "Hero Image",
+                            "name": "hero_image",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "60",
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "full-width": "Full-width",
-                                "left-half": "Left Half"
-                            },
-                            "allow_null": 0,
-                            "default_value": "",
-                            "layout": "horizontal",
-                            "return_format": "value"
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -310,6 +288,25 @@
                     "label": "Rich Text",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_6148d4f4b31de",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5fd831adb2888",
                             "label": "Rich Text",
@@ -554,6 +551,28 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_6148d7ca1d9ae",
+                            "label": "Style",
+                            "name": "cta_style",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left-green": "Left-aligned",
+                                "centered-blue": "Centered"
+                            },
+                            "allow_null": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
                             "key": "field_5fd835e33ea01",
                             "label": "CTA Title",
                             "name": "cta_title",
@@ -576,7 +595,7 @@
                             "key": "field_6143841f795e3",
                             "label": "CTA Text",
                             "name": "cta_text",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "Add the short additional text",
                             "required": 0,
                             "conditional_logic": 0,
@@ -586,10 +605,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "maxlength": 180,
-                            "rows": 2,
-                            "new_lines": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         },
                         {
                             "key": "field_5fd836333ea02",
@@ -992,6 +1011,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_6148de6309c57",
+                            "label": "Copy",
+                            "name": "copy",
+                            "type": "wysiwyg",
+                            "instructions": "Optional copy for this section. Leave blank if not required.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
                             "key": "field_5ffbc9da9e931",
                             "label": "Offerings",
                             "name": "offerings",
@@ -1268,7 +1306,7 @@
                                     "label": "Details",
                                     "name": "details",
                                     "type": "wysiwyg",
-                                    "instructions": "Add the details for this offering. Use bullet points to create a two column list on larger screens.",
+                                    "instructions": "Add the details for this offering.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1465,7 +1503,7 @@
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
-                                    "instructions": "Image size: 670px x 510px",
+                                    "instructions": "Image size: 498px x 316px",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1969,21 +2007,21 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "front-page.php"
             }
         ],
         [
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-templates\/contact.php"
             }
         ],
         [
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-templates\/product.php"
             }
         ]
     ],
@@ -1997,5 +2035,5 @@
     ],
     "active": true,
     "description": "Adds the flexible content modules to the default template",
-    "modified": 1631905118
+    "modified": 1632229621
 }

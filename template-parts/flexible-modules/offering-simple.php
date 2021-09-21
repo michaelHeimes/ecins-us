@@ -6,6 +6,7 @@
  * @package sixheads
  **/
 $title = get_sub_field('section_title');
+$copy = get_sub_field('copy');
 $spacing = get_sub_field('spacing');
 $background = get_sub_field('background');
 ?>
@@ -15,6 +16,9 @@ $background = get_sub_field('background');
     <div class="wrapper--inner wrapper--narrow">
       <?php if ($title) : ?>
         <h2 class="section-title offering-simple__title"><?php echo $title; ?></h2>
+      <?php endif; ?>
+      <?php if ($copy) : ?>
+        <p><?php echo $copy; ?></p>
       <?php endif; ?>
       <ul class="offering-simple__list">
         <?php while (have_rows('offerings')) : the_row(); ?>

@@ -10,7 +10,7 @@ $spacing = get_sub_field('spacing');
 
 <?php if (have_rows('offerings')) : ?>
   <div class="offering-detailed module-spacing--<?php echo $spacing; ?>">
-    <div class="wrapper--inner">
+    <div class="wrapper--inner wrapper--narrow">
       <?php while (have_rows('offerings')) : the_row(); ?>
         <article class="offering-detailed__item">
           <svg class="icon icon__offerings">

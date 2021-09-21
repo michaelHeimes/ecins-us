@@ -161,22 +161,26 @@ $spacing = get_sub_field('spacing');
                 <img class="group-29" src="<?php echo get_template_directory_uri(); ?>/img/word-art-images/group-29@1x.png" />
                 <img class="group-30" src="<?php echo get_template_directory_uri(); ?>/img/word-art-images/group-30@1x.png" />
               </div>
-            </div>
-            
-            <?php 
-			$link = get_sub_field('button_link');
-			if( $link ): 
-			    $link_url = $link['url'];
-			    $link_title = $link['title'];
-			    $link_target = $link['target'] ? $link['target'] : '_self';
-			    ?>
-			    <a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-			<?php endif; ?>
-            
+            </div>            
           </div>
         </div>
       </div>
     </div>
+ 
+ <div class="word-art-btn entry-content module-spacing--<?php echo $spacing; ?>">
+  <div class="wrapper--narrow">    
+    <?php 
+	$link = get_sub_field('button_link');
+	if( $link ): 
+	    $link_url = $link['url'];
+	    $link_title = $link['title'];
+	    $link_target = $link['target'] ? $link['target'] : '_self';
+	    ?>
+	    <a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+	<?php endif; ?>
+  </div>
+</div>
+    
     <script>
       function ShowOnScroll() {
         this.toShow = [];
