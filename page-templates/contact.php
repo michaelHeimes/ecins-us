@@ -20,7 +20,7 @@ get_header();
         get_template_part('template-parts/flexible-modules/flexible-modules');
 
         get_template_part('template-parts/contact/locations');
-        get_template_part('template-parts/contact/contact-form');
+//         get_template_part('template-parts/contact/contact-form');
 
       endwhile; // End of the loop.
       ?>
