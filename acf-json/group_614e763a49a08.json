@@ -1,17 +1,36 @@
 {
-    "key": "group_6000c9ca6ef58",
+    "key": "group_614e763a49a08",
     "title": "Case Studies Introduction",
     "fields": [
         {
-            "key": "field_6000c9ca7a871",
-            "label": "Hero Image",
-            "name": "hero_image_casestudies",
-            "type": "image",
-            "instructions": "Add the background image for the hero. Size: 2200px wide by 640px high.",
+            "key": "field_614e763a64b9b",
+            "label": "Hero Copy",
+            "name": "hero_copy_casestudies",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "60",
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_614e763a64ba6",
+            "label": "Hero Image",
+            "name": "hero_image_casestudies",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -27,30 +46,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_6000c9ca7a8b5",
-            "label": "Hero Title",
-            "name": "hero_title_casestudies",
+            "key": "field_614e763a64bac",
+            "label": "Page Intro Heading",
+            "name": "page_intro_heading_casestudies",
             "type": "text",
-            "instructions": "Add a title to this hero banner.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "40",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Case Studies",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6000c9ca7a8c3",
-            "label": "Page Intro",
-            "name": "page_intro_casestudies",
-            "type": "textarea",
-            "instructions": "Add a page intro for the Case Studies.",
+            "instructions": "Add a page intro heading for the News.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -60,16 +60,35 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "wpautop"
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_6000c9ca7a8cf",
+            "key": "field_614e763a64bb2",
+            "label": "Page Intro Copy",
+            "name": "page_intro_casestudies",
+            "type": "wysiwyg",
+            "instructions": "Add a page intro for the News.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_614e763a64bb7",
             "label": "Video",
             "name": "video_casestudies",
             "type": "oembed",
-            "instructions": "Add an optional video to the Case Studies. This will appear above the feed of articles. Leave the field blank to hide this module. (First upload the video to YouTube\/Vimeo account then copy the video link and paste in here. This will allow the video to be played directly within the page.)",
+            "instructions": "Add an optional video to the News. This will appear above the feed of articles. Leave the field blank to hide this module. (First upload the video to YouTube\/Vimeo account then copy the video link and paste in here. This will allow the video to be played directly within the page.)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -97,6 +116,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Add hero banner, page intro and optional video to Case Studies.",
-    "modified": 1610664488
+    "description": "Add hero banner, page intro and optional video to News.",
+    "modified": 1632532634
 }

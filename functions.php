@@ -45,6 +45,7 @@ if (!function_exists('sixheads_setup')) :
 		add_theme_support('post-thumbnails');
 		// add_image_size( 'hero', 1000, 400, true );
 		// add_image_size( 'hero-set-width', 1000 );
+		add_image_size( 'resource_card', 160, 135, true ); // cropped.
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(array(
@@ -128,8 +129,8 @@ add_action('wp_head', 'sixheads_javascript_detection', 0);
 /**
  * Enqueue scripts and styles.
  */
-function sixheads_scripts()
-{
+function sixheads_scripts() {
+
 	// wp_enqueue_style('sixheads-style', get_stylesheet_uri());
 	wp_enqueue_style('sixheads-style', get_template_directory_uri() . '/style.min.css', array(), '20210528');
 
@@ -139,9 +140,20 @@ function sixheads_scripts()
 
 	// wp_enqueue_script('sixheads-vendor', get_template_directory_uri() . '/js/vendor.js', array(), '', true);
 	// wp_enqueue_script('sixheads-main', get_template_directory_uri() . '/js/main.js', array(), '', true);
-
+	wp_enqueue_script('sixheads-grid', get_template_directory_uri() . '/js/content-grid.min.js', array(), '20210528', true);
 	wp_enqueue_script('sixheads-vendor', get_template_directory_uri() . '/js/vendor.min.js', array(), '20210528', true);
-	wp_enqueue_script('sixheads-main', get_template_directory_uri() . '/js/main.min.js', array(), '20210528', true);
+
+
+	wp_register_script( 'ecins_scripts', get_template_directory_uri() . '/js/main.min.js', array( 'jquery' ), filemtime( get_theme_file_path( '/js/main.min.js' ) ), true );
+
+	$localized = array(
+		'ajaxUrl'  => admin_url( 'admin-ajax.php' ),
+		'themeDir' => get_template_directory_uri(),
+		'siteUrl'  => get_site_url(),
+	);
+	wp_localize_script( 'ecins_scripts', 'localized', $localized );
+
+	wp_enqueue_script( 'ecins_scripts' );
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -209,6 +221,18 @@ function tiny_mce_remove_unused_formats($init)
 }
 add_filter('tiny_mce_before_init', 'tiny_mce_remove_unused_formats');
 
+
+
+/**
+ * Setup $GLOBALS value for default thumbnail ID
+ */
+function ecins_set_default_thumbnail_global() {
+	global $xona_default_thumbnail;
+
+	$xona_default_thumbnail = get_field( 'global_default_featured_image', 'option' );
+}
+add_action( 'init', 'ecins_set_default_thumbnail_global' );
+
 /**
  * Add AQ Resizer.
  * https://github.com/syamilmj/Aqua-Resizer
@@ -241,6 +265,12 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * REST API for Resrouces.
+ */
+require get_template_directory() . '/inc/functions-restapi.php';
+
 
 
 /**

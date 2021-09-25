@@ -18,16 +18,17 @@ get_header();
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
-
 		<?php
 
 		get_template_part('template-parts/news/hero-banner');
+		
 		get_template_part('template-parts/news/page-intro');
 		get_template_part('template-parts/news/video');
+		
 
 		if (have_posts()) :
 
-			echo '<div class="wrapper--inner">';
+			echo '<div class="wrapper--inner wrapper--narrow posts__list">';
 
 			/* Start the Loop */
 			while (have_posts()) :
@@ -58,7 +59,6 @@ get_header();
 		echo '</div>';
 		?>
 
-		<?php get_template_part('template-parts/demo-or-ebook/demo-cta'); ?>
 		<?php get_template_part('template-parts/testimonials/testimonial'); ?>
 
 	</main><!-- #main -->

@@ -1,4 +1,7 @@
-<h2 class="section-title offering-simple__title text-center"><?php the_sub_field('heading');?></h2>
+
+<?php if( $heading = get_sub_field('heading')):?>
+<h2 class="section-title offering-simple__title text-center"><?php echo $heading ?></h2>
+<?php endif;?>
 
 <div class="wrapper--inner wrapper--narrow slider--testimonials">
   <?php

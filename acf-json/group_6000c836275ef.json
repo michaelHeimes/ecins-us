@@ -3,15 +3,34 @@
     "title": "News Introduction",
     "fields": [
         {
+            "key": "field_614e6d26c54f0",
+            "label": "Hero Copy",
+            "name": "hero_copy_news",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_6000c84bf7004",
             "label": "Hero Image",
             "name": "hero_image_news",
             "type": "image",
-            "instructions": "Add the background image for the hero. Size: 2200px wide by 640px high.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "60",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -27,30 +46,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_6000c892f7005",
-            "label": "Hero Title",
-            "name": "hero_title_news",
+            "key": "field_614e6fabd922a",
+            "label": "Page Intro Heading",
+            "name": "page_intro_heading_news",
             "type": "text",
-            "instructions": "Add a title to this hero banner.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "40",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "News",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6000c8d1f7006",
-            "label": "Page Intro",
-            "name": "page_intro_news",
-            "type": "textarea",
-            "instructions": "Add a page intro for the News.",
+            "instructions": "Add a page intro heading for the News.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -60,9 +60,28 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "wpautop"
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6000c8d1f7006",
+            "label": "Page Intro Copy",
+            "name": "page_intro_news",
+            "type": "wysiwyg",
+            "instructions": "Add a page intro for the News.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_6000c90ff7007",
@@ -98,5 +117,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Add hero banner, page intro and optional video to News.",
-    "modified": 1610664519
+    "modified": 1632530545
 }
