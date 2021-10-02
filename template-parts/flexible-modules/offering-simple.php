@@ -9,10 +9,11 @@ $title = get_sub_field('section_title');
 $copy = get_sub_field('copy');
 $spacing = get_sub_field('spacing');
 $background = get_sub_field('background');
+$scroll_ID = get_sub_field('unique_id');
 ?>
 
 <?php if (have_rows('offerings')) : ?>
-  <div class="offering-simple module-spacing--<?php echo $spacing; ?> offering__bg--<?php echo $background; ?>">
+  <div<?php if( $scroll_ID ):?> id="<?php echo $scroll_ID;?>"<?php endif;?> class="offering-simple module-spacing--<?php echo $spacing; ?> offering__bg--<?php echo $background; ?>">
     <div class="wrapper--inner wrapper--narrow">
       <?php if ($title) : ?>
         <h2 class="section-title offering-simple__title"><?php echo $title; ?></h2>

@@ -1,6 +1,6 @@
 {
     "key": "group_614e763a49a08",
-    "title": "Case Studies Introduction",
+    "title": "Resources Introduction",
     "fields": [
         {
             "key": "field_614e763a64b9b",
@@ -105,7 +105,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-case-studies"
+                "value": "acf-options-resources"
             }
         ]
     ],
@@ -116,6 +116,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Add hero banner, page intro and optional video to News.",
-    "modified": 1632532634
+    "description": "Add hero banner, page intro and optional video to Resources.",
+    "modified": 1632944837
 }

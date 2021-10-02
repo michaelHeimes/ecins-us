@@ -1,6 +1,6 @@
 <?php
 
-$resource_types = get_terms( 'casestudy-type', array(
+$resource_types = get_terms( 'resource-type', array(
 	'hide_empty' => true,
 ) );
 
@@ -11,11 +11,11 @@ foreach ( $resource_types as $type ) {
 }
 
 $get_resources = new WP_Query( array(
-	'post_type'      => array( 'case-study' ),
+	'post_type'      => array( 'resource' ),
 	'posts_per_page' => -1,
 	'tax_query'      => array(
 		array(
-			'taxonomy' => 'casestudy-type',
+			'taxonomy' => 'resource-type',
 			'terms'    => $get_types,
 			'field'    => 'term_id',
 			'operator' => 'IN',
@@ -30,7 +30,7 @@ if ( $get_resources->have_posts() ) {
 		$get_resources->the_post();
 
 		foreach ( $resource_types as $type ) {
-			if ( has_term( $type->term_id, 'casestudy-type', get_the_ID() ) ) {
+			if ( has_term( $type->term_id, 'resource-type', get_the_ID() ) ) {
 				if ( ! array_key_exists( $type->name, $sorted_resources ) ) {
 					$sorted_resources[ $type->name ] = array();
 				}
@@ -55,13 +55,13 @@ if ( is_front_page() || is_home() ) {
 			<button type="button" class="btn secondary">Filter Resources</button>
 		</div>
 		<div class="content-grid--filters">
-			<div class="filter-box casestudy-type" data-filter="casestudy-type">
+			<div class="filter-box resource-type" data-filter="resource-type">
 				<div class="filter-title">Filter</div>
 				<div class="filter-values">
 					<?php foreach ( $resource_types as $type ) { ?>
 						<div class="filter-checkbox">
-							<input type="checkbox" value="<?php echo $type->term_id; ?>" id="filter-casestudy-type-<?php echo $type->slug; ?>">
-							<label for="filter-casestudy-type-<?php echo $type->slug; ?>">
+							<input type="checkbox" value="<?php echo $type->term_id; ?>" id="filter-resource-type-<?php echo $type->slug; ?>">
+							<label for="filter-resource-type-<?php echo $type->slug; ?>">
 								<?php echo $type->name; ?>
 							</label>
 						</div>
@@ -83,6 +83,16 @@ if ( is_front_page() || is_home() ) {
 						$thumbnail_id   = $GLOBALS[ 'ecins_default_thumbnail' ]; // default thumbnail image.
 						$resource_title = get_field( 'hero_title', $resource->ID );
 						$excerpt        = strip_tags( $resource->post_content );
+						$gated_form     = get_field('resource_gravity_form', $resource->ID);
+
+						if (get_field('resource_file', $resource->ID) && !$gated_form) {
+							$resource_file = get_field('resource_file', $resource->ID);
+							$permalink     = $resource_file ? wp_get_attachment_url($resource_file) : '#';
+						}
+
+						if (get_field('resource_cover_image', $resource->ID)) {
+							$thumbnail_id = get_field('resource_cover_image', $resource->ID);
+						}						
 
 
 						if ( has_post_thumbnail( $resource->ID ) ) {

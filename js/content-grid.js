@@ -102,7 +102,7 @@ jQuery( function ( $ ) {
 		 */
 		this.getPosts = function() {
 			this.updateCheckboxes();
-
+			
 			var self = this,
 				url  = localized.siteUrl + '/wp-json/ecins/v2/' + this.state.type,
 				args = {
@@ -114,8 +114,6 @@ jQuery( function ( $ ) {
 					tax_queries: this.state.tax_queries
 				};
 				
-				console.log(url);
-
 			// Freeze the grid
 			$( '.content-grid--results' ).addClass( 'is-loading' );
 
@@ -187,7 +185,7 @@ jQuery( function ( $ ) {
 			args.type = 'partners';
 		}
 		
-		if ( $( 'body' ).hasClass( 'post-type-archive-case-study' ) ) {
+		if ( $( 'body' ).hasClass( 'post-type-archive-resource' ) ) {
 			args.type = 'resources';
 		}
 

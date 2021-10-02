@@ -8,7 +8,7 @@
   // the query
   $args = array(
     'post_type'              => 'testimonials',
-    'posts_per_page'         => '4',
+    'posts_per_page'         => '999999',
     'orderby'                => 'rand',
   );
 

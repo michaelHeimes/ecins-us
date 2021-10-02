@@ -33,7 +33,7 @@ function ecins_get_resources( $data ) {
 	);
 
 	$args = array(
-		'post_type'      => 'case-study',
+		'post_type'      => 'resource',
 		'posts_per_page' => -1, // $data[ 'per_page' ],
 		'orderby'        => 'title', // $data[ 'orderby' ],
 		'order'          => 'ASC', // $data[ 'order' ],
@@ -66,7 +66,7 @@ function ecins_get_resources( $data ) {
 
 		// get the Case Study Type tax
 		$type_names = array();
-		$types      = get_the_terms( get_the_ID(), 'casestudy-type' );
+		$types      = get_the_terms( get_the_ID(), 'resource-type' );
 
 		if ( $types ) {
 			foreach ( $types as $type ) {
@@ -92,6 +92,16 @@ function ecins_get_resources( $data ) {
 
 		$permalink    = get_the_permalink( get_the_ID() );
 		$thumbnail_id = 0;
+		$gated_form   = get_field('resource_gravity_form', get_the_ID());
+
+		if (get_field('resource_file', get_the_ID()) && !$gated_form) {
+			$resource_file = get_field('resource_file', get_the_ID());
+			$permalink     = $resource_file ? wp_get_attachment_url($resource_file) : '#';
+		}
+
+		if (get_field('resource_link', get_the_ID())) {
+			$permalink = get_field('resource_link', get_the_ID());
+		}
 
 
 		if ( ! $thumbnail_id ) {

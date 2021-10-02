@@ -29,6 +29,7 @@
 	    autoplaySpeed: 5000,
 	    arrows: false,
 	    cssEase: 'ease',
+	    rows: 0
 	});
   
   // ----------------------------------------

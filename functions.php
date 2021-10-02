@@ -45,7 +45,7 @@ if (!function_exists('sixheads_setup')) :
 		add_theme_support('post-thumbnails');
 		// add_image_size( 'hero', 1000, 400, true );
 		// add_image_size( 'hero-set-width', 1000 );
-		add_image_size( 'resource_card', 160, 135, true ); // cropped.
+		add_image_size( 'resource_card', 160, '', true ); // cropped.
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(array(
@@ -311,8 +311,8 @@ if (function_exists('acf_add_options_page')) {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Case Studies',
-		'menu_title'	=> 'Case Studies',
+		'page_title' 	=> 'Resources',
+		'menu_title'	=> 'Resources',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	acf_add_options_sub_page(array(

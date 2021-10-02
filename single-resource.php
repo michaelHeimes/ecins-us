@@ -18,11 +18,7 @@ get_header();
     while (have_posts()) :
       the_post();
 
-      get_template_part('template-parts/casestudies/content-casestudies');
-
-      echo '<div class="wrapper--inner">';
-      the_post_navigation();
-      echo '</div>';
+      get_template_part('template-parts/resources/content-resource');
 
     endwhile; // End of the loop.
     ?>
