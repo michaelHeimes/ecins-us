@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="242px" height="209px" viewBox="0 0 242 209" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ECINS_Funnel-Graphic-02" transform="translate(-402.500000, -1230.000000)" fill="#58B947" fill-rule="nonzero">
+            <g id="Group" transform="translate(41.200000, 1175.000000)">
+                <g transform="translate(362.200000, 55.800000)">
+                    <rect id="Rectangle" x="223.8" y="101.3" width="2.7" height="5"></rect>
+                    <path d="M240.9,103.8 L223.9,94 C219,41.2 174.5,0 120.5,0 C66.5,0 22.1,41.3 17.1,94 L0,103.9 L17.1,113.8 C22.1,166.5 66.5,207.8 120.5,207.8 C174.6,207.8 219,166.5 223.9,113.8 L240.9,103.8 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

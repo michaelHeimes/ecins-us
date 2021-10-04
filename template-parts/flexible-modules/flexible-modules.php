@@ -40,6 +40,10 @@ if (have_rows('flexible_content')) :
 
       get_template_part('template-parts/flexible-modules/word-art');
 
+    elseif (get_row_layout() == 'funnel_graphic') :
+
+      get_template_part('template-parts/flexible-modules/funnel-graphic');
+
     elseif (get_row_layout() == 'products') :
 
       get_template_part('template-parts/flexible-modules/products');
