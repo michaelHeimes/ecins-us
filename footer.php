@@ -64,6 +64,28 @@
 </div><!-- #page -->
 </div><!-- #container -->
 
+<div class="region-picker">
+	<div class="region-popup">
+		
+		<div class="site-logo">
+			<h1 class="site-title"><?php bloginfo('name'); ?></h1>
+		</div>
+		
+		<div class="content">
+			<h3 class="welcome section-title">Welcome!</h3>
+			<p> To get the best experience,<br>please choose your region:</p>
+			<div class="region-selector">
+				<ul>
+					<li class="uk"><a href="/"><span>UK</span></a></li>
+					<li class="us"><a href="/us/"><span>US and global</span></a></li>
+					<li class="au"><a href="/us/"><span>Australia</span></a></li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
 <?php wp_footer(); ?>
 
 </body>

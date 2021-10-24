@@ -23,6 +23,8 @@
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+<!-- 	<link rel="preload" href="/wp-content/themes/ecins-us/js/localized-ip.js?ver=1633535448" as="script" /> -->
 
 	<?php wp_head(); ?>
 </head>
@@ -39,7 +41,15 @@
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'sixheads'); ?></a>
 
 			<div class="header-utilities">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/usa.png" />
+				
+				<nav>
+					<ul class="menu country-nav">
+						<li><a href="javascript:;"><span>US</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/usa.png" /></a></li>
+						<li><a href="https://ecins.com/?domain=uk"><span>UK</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/GB-United-Kingdom-Flag-icon.png" /></a></li>
+						<li><a href="https://ecins.com/us/?domain=au"><span>AU</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/AU-Australia-Flag-icon.png" /></a></li>
+					</ul>
+				</nav>
+				
 				<?php get_template_part('template-parts/search/search-header'); ?>
 				<?php get_template_part('template-parts/navigation/client-login'); ?>
 				<?php

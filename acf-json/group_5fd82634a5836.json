@@ -2201,6 +2201,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_617474dccbde2",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5ffe2aaf5e02f",
                             "label": "Video",
                             "name": "video_embed",
@@ -2236,6 +2255,31 @@
                                 "both": "Add space before and after the module"
                             },
                             "default_value": "none",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_617478cabc986",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "white": "White",
+                                "light-blue": "Light Blue"
+                            },
+                            "default_value": false,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -2658,5 +2702,5 @@
     ],
     "active": true,
     "description": "Adds the flexible content modules to the default template",
-    "modified": 1633273002
+    "modified": 1635023312
 }

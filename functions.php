@@ -7,6 +7,30 @@
  *
  * @package sixheads
  */
+ 
+ // Region Cookie Redirects
+function my_cookie_redirect() {
+		
+	$page = 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];	
+
+	if ( ($_COOKIE['domain']) == 'us' && strpos($page, '?domain=') === false && !is_user_logged_in() ) {
+		var_dump($page);
+		
+		header("Location: https://staging.ecins.com/us/");
+		exit;
+				
+	}
+
+	if ( ($_COOKIE['domain']) == 'au' && strpos($page, '?domain=') === false && !is_user_logged_in() ) {
+		
+		header("Location: https://staging.ecins.com/us/");
+		exit;
+				
+	}
+   
+}
+add_action('template_redirect', 'my_cookie_redirect', 1);
+
 
 if (!function_exists('sixheads_setup')) :
 	/**
@@ -143,6 +167,8 @@ function sixheads_scripts() {
 	wp_enqueue_script('sixheads-grid', get_template_directory_uri() . '/js/content-grid.min.js', array(), '20210528', true);
 	wp_enqueue_script('sixheads-vendor', get_template_directory_uri() . '/js/vendor.min.js', array(), '20210528', true);
 
+	wp_register_script( 'ecins_localized_ip', get_template_directory_uri() . '/js/localized-ip.js', array( 'jquery' ), filemtime( get_theme_file_path( '/js/localized-ip.js' ) ), true );
+
 
 	wp_register_script( 'ecins_scripts', get_template_directory_uri() . '/js/main.min.js', array( 'jquery' ), filemtime( get_theme_file_path( '/js/main.min.js' ) ), true );
 
@@ -152,6 +178,8 @@ function sixheads_scripts() {
 		'siteUrl'  => get_site_url(),
 	);
 	wp_localize_script( 'ecins_scripts', 'localized', $localized );
+
+// 	wp_enqueue_script( 'ecins_localized_ip' );
 
 	wp_enqueue_script( 'ecins_scripts' );
 
@@ -328,3 +356,8 @@ function my_acf_init()
 	acf_update_setting('google_api_key', 'AIzaSyDxU2zcv3mxpvV2mRvu3f80RnwDMR5BxQk');
 }
 add_action('acf/init', 'my_acf_init');
+
+
+
+
+

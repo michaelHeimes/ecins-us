@@ -6,10 +6,11 @@
  * @package sixheads
  **/
 $spacing = get_sub_field('spacing');
+$count = get_sub_field('offerings');
 ?>
 
 <?php if (have_rows('offerings')) : ?>
-  <div class="offering-detailed module-spacing--<?php echo $spacing; ?>">
+  <div class="offering-detailed<?php if($count >= 4):?> two-cols<?php endif;?> module-spacing--<?php echo $spacing; ?>">
     <div class="wrapper--inner wrapper--narrow">
       <?php while (have_rows('offerings')) : the_row(); ?>
         <article class="offering-detailed__item">
