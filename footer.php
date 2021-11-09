@@ -77,7 +77,7 @@
 			<div class="region-selector">
 				<ul>
 					<li class="uk"><a href="/"><span>UK</span></a></li>
-					<li class="us"><a href="/us/"><span>US and global</span></a></li>
+					<li class="us"><a href="/us/"><span>US & Global</span></a></li>
 					<li class="au"><a href="/us/"><span>Australia</span></a></li>
 				</ul>
 			</div>

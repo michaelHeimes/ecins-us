@@ -113,6 +113,25 @@
             "multiple": 0
         },
         {
+            "key": "field_6183fa9c24476",
+            "label": "Embedded Form?",
+            "name": "embedded_form",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_60abf408a1e27",
             "label": "Display title?",
             "name": "resource_gravity_form_display_title",
@@ -168,5 +187,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632920578
+    "modified": 1636039387
 }

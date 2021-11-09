@@ -45,8 +45,8 @@
 				<nav>
 					<ul class="menu country-nav">
 						<li><a href="javascript:;"><span>US</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/usa.png" /></a></li>
-						<li><a href="https://ecins.com/?domain=uk"><span>UK</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/GB-United-Kingdom-Flag-icon.png" /></a></li>
-						<li><a href="https://ecins.com/us/?domain=au"><span>AU</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/AU-Australia-Flag-icon.png" /></a></li>
+						<li><a href="<?php echo home_url(); ?>/?domain=uk"><span>UK</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/GB-United-Kingdom-Flag-icon.png" /></a></li>
+						<li><a href="<?php echo home_url(); ?>/us/?domain=au"><span>AU</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/AU-Australia-Flag-icon.png" /></a></li>
 					</ul>
 				</nav>
 				

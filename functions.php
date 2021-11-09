@@ -9,6 +9,7 @@
  */
  
  // Region Cookie Redirects
+/*
 function my_cookie_redirect() {
 		
 	$page = 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];	
@@ -30,6 +31,7 @@ function my_cookie_redirect() {
    
 }
 add_action('template_redirect', 'my_cookie_redirect', 1);
+*/
 
 
 if (!function_exists('sixheads_setup')) :
@@ -167,9 +169,6 @@ function sixheads_scripts() {
 	wp_enqueue_script('sixheads-grid', get_template_directory_uri() . '/js/content-grid.min.js', array(), '20210528', true);
 	wp_enqueue_script('sixheads-vendor', get_template_directory_uri() . '/js/vendor.min.js', array(), '20210528', true);
 
-	wp_register_script( 'ecins_localized_ip', get_template_directory_uri() . '/js/localized-ip.js', array( 'jquery' ), filemtime( get_theme_file_path( '/js/localized-ip.js' ) ), true );
-
-
 	wp_register_script( 'ecins_scripts', get_template_directory_uri() . '/js/main.min.js', array( 'jquery' ), filemtime( get_theme_file_path( '/js/main.min.js' ) ), true );
 
 	$localized = array(
@@ -178,7 +177,7 @@ function sixheads_scripts() {
 		'siteUrl'  => get_site_url(),
 	);
 	wp_localize_script( 'ecins_scripts', 'localized', $localized );
-
+	
 // 	wp_enqueue_script( 'ecins_localized_ip' );
 
 	wp_enqueue_script( 'ecins_scripts' );

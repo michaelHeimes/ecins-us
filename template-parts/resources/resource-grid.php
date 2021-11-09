@@ -84,10 +84,16 @@ if ( is_front_page() || is_home() ) {
 						$resource_title = get_field( 'hero_title', $resource->ID );
 						$excerpt        = strip_tags( $resource->post_content );
 						$gated_form     = get_field('resource_gravity_form', $resource->ID);
-
+						$embedded_form     = get_field('embedded_form', $resource->ID);
+						
 						if (get_field('resource_file', $resource->ID) && !$gated_form) {
 							$resource_file = get_field('resource_file', $resource->ID);
 							$permalink     = $resource_file ? wp_get_attachment_url($resource_file) : '#';
+						}
+
+						if (get_field('resource_file', $resource->ID) && get_field('embedded_form', $resource->ID) ) {
+							$resource_file = get_field('resource_file', $resource->ID);
+							$permalink      = get_the_permalink( $resource->ID );							
 						}
 
 						if (get_field('resource_cover_image', $resource->ID)) {
@@ -108,7 +114,7 @@ if ( is_front_page() || is_home() ) {
 						}
 						?>
 						<a href="<?php echo $permalink; ?>" class="content-card">
-							<div class="content-card--box">
+							<div class="content-card--box hi">
 								<div class="content-card--image">
 									<?php echo wp_get_attachment_image( $thumbnail_id, 'resource_card', false, array( 'alt' => $resource_title ) ); ?>
 								</div>
