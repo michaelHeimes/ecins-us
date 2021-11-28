@@ -88,6 +88,10 @@
 
 <?php wp_footer(); ?>
 
+<?php if(get_field('is_this_a_thank_you_page')):?>
+	<img style="display: block; height: 0; width: 0;" src="https://ct.capterra.com/capterra_tracker.gif?vid=2198521&vkey=97fa54fe515c28aea500873c74aaf2d6" />
+<?php endif;?>
+
 </body>
 
 </html>

@@ -1,0 +1,43 @@
+{
+    "key": "group_618fb9b20125d",
+    "title": "Is this a Thank You Page?",
+    "fields": [
+        {
+            "key": "field_618fb9d3f9228",
+            "label": "Is This a Thank You Page?",
+            "name": "is_this_a_thank_you_page",
+            "type": "true_false",
+            "instructions": "Checking this adds tracking code.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1636809870
+}
