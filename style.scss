@@ -1450,11 +1450,11 @@ a .products-detailed__btn { color: #fff; }
 
 .products__btn--cases:hover { background-color: #469538; }
 
-.cta { background-color: #d1e1e7; padding-top: 2rem; padding-bottom: 2rem; text-align: center; }
+.cta, .image-wcustom-color-background { background-color: #d1e1e7; padding-top: 2rem; padding-bottom: 2rem; text-align: center; }
 
-@media (min-width: 768px) { .cta { padding-top: 3rem; padding-bottom: 3rem; } }
+@media (min-width: 768px) { .cta, .case-study-cta, .image-wcustom-color-background { padding-top: 3rem; padding-bottom: 3rem; } }
 
-@media (min-width: 1120px) { .cta { padding-top: 4rem; padding-bottom: 4rem; } }
+@media (min-width: 1120px) { .cta, .case-study-cta, .image-wcustom-color-background { padding-top: 4rem; padding-bottom: 4rem; } }
 
 .cta *:last-child { margin-bottom: 0; }
 
@@ -1685,7 +1685,50 @@ body {
 	
 	.gfield {
 		text-align: left;
-	}z
+	}
+	
+	.case-study-cta {
+		.inner {
+			display: flex;
+			flex-wrap: wrap;
+			
+			.left {
+				margin-bottom: 2rem;
+			}
+			
+			.right {
+				
+				h2 {
+					margin-top: 0;
+					font-weight: 900;
+					font-size: 20px;
+					color: #003146;
+					line-height: 27px;
+				}
+				
+			}
+			
+			@media (min-width: 768px) {
+				.left {
+					width: 40%;
+					margin-bottom: 0;
+				}
+				
+				.right {
+					width: 60%;
+					padding-left: 32px;
+				}				
+			}
+			
+		}
+	&.white-text {
+		color: #fff;
+		.inner .right h2 {
+			color: #fff;
+		}	
+	}
+	
+	}
 
 	.posts__list {
 		article.posts__item {
@@ -1717,7 +1760,7 @@ body {
 			}
 			
 			.posts__title a {
-				font-eight: 900;
+				font-weight: 900;
 				font-size: 20px;
 				color: #003146;
 				line-height: 27px;
@@ -2927,7 +2970,16 @@ body {
 		}
 	}
 	
-	.testimonials {
+	.testimonials,
+	.customer-logos {
+		padding-left: 2rem;
+		padding-right: 2rem;	
+		
+		@media (min-width: 1024px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+			
 /*
 		padding: 2rem;
 		@media (min-width: 960px) {
@@ -3003,6 +3055,29 @@ body {
 				}
 			}
 			
+		}
+		
+	}
+	
+	.customer-logos {
+		.slick-track {
+			display: flex;
+		}
+		.slick-slide {
+			display: flex;
+			height: auto;
+			align-items: center;
+			justify-content: center;
+			margin-left: 20px;
+			margin-right: 20px;
+			img {
+				display: inline-block;
+				max-height: 100px;
+			}
+		}
+		
+		.slick-dots li button {
+			border-color: #1a6a89;
 		}
 		
 	}
@@ -3764,7 +3839,7 @@ body {
 	.testimonials {
 		margin-top: 0;
 	}
-	
+		
 }
 
 &.single-resource {
@@ -3863,6 +3938,12 @@ body {
 			margin-top: 0;
 		}
 		
+	}
+	
+	.image-wcustom-color-background {
+		.btn-wrap {
+		    padding-top: 1.7rem;
+		}
 	}
 	
 }

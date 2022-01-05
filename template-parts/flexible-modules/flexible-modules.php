@@ -31,6 +31,18 @@ if (have_rows('flexible_content')) :
     elseif (get_row_layout() == 'page_intro') :
 
       get_template_part('template-parts/flexible-modules/page-intro');
+      
+    elseif (get_row_layout() == 'image_wcustom_color_background') :
+
+      get_template_part('template-parts/flexible-modules/image-wcustom-color-background');
+      
+    elseif (get_row_layout() == 'case_study_cta') :
+
+      get_template_part('template-parts/flexible-modules/case-study-cta');
+
+    elseif (get_row_layout() == 'customer_logos') :
+
+      get_template_part('template-parts/flexible-modules/customer-logos');
 
     elseif (get_row_layout() == 'rich_text') :
 
