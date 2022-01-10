@@ -78,7 +78,7 @@
 				<ul>
 					<li class="uk"><a href="/"><span>UK</span></a></li>
 					<li class="us"><a href="/us/"><span>US & Global</span></a></li>
-					<li class="au"><a href="/us/"><span>Australia</span></a></li>
+					<li class="au"><a href="/au/"><span>Australia</span></a></li>
 				</ul>
 			</div>
 		</div>

@@ -122,7 +122,7 @@
 	});
 	
 	$('.region-selector').on('click', 'li.au a', function(){
-		Cookies.set('domain', 'us', {expires: 30 });
+		Cookies.set('domain', 'au', {expires: 30 });
 	});  
 
 	$('.country-nav').on('click', 'a', function(){
