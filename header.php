@@ -12,6 +12,7 @@
 
 ?>
 <!doctype html>
+<?php $blog_id = get_current_blog_id();?>
 <html <?php language_attributes(); ?> class="no-js">
 
 <script src='//eu.fw-cdn.com/10069955/50057.js' chat='false'></script>
@@ -24,8 +25,35 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	
+	<?php if(is_front_page()):?>
+	<meta name="facebook-domain-verification" content="itfnl3l38zfn8mit2du9zejjm8d1w8" />
+	<?php endif;?>
+	
 <!-- 	<link rel="preload" href="/wp-content/themes/ecins-us/js/localized-ip.js?ver=1633535448" as="script" /> -->
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8EYB07SPER"></script>
+	
+	<?php if ( 2 == $blog_id ):?>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-8EYB07SPER');
+		gtag('config', 'G-2PD0H95JSN');
+		</script>
+	<?php endif;?>
+	
+	<?php if ( 3 == $blog_id ):?>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-8EYB07SPER');
+		gtag('config', 'G-YM6JX4L225');
+		</script>
+	<?php endif;?>
+	
 	<?php wp_head(); ?>
 </head>
 
@@ -44,9 +72,21 @@
 				
 				<nav>
 					<ul class="menu country-nav">
-						<li><a href="javascript:;"><span>US</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/usa.png" /></a></li>
-						<li><a href="<?php echo home_url(); ?>/?domain=uk"><span>UK</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/GB-United-Kingdom-Flag-icon.png" /></a></li>
-						<li><a href="<?php echo home_url(); ?>/us/?domain=au"><span>AU</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/AU-Australia-Flag-icon.png" /></a></li>
+						
+						<?php if ( 2 == $blog_id ):?>
+						
+							<li><a href="javascript:;"><span>US</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/usa.png"/></a></li>
+							<li><a href="https://ecins.com/?domain=uk"><span>UK</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/GB-United-Kingdom-Flag-icon.png" /></a></li>
+							<li><a href="https://ecins.com/au/?domain=au"><span>AU</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/AU-Australia-Flag-icon.png" /></a></li>
+						
+						<?php elseif ( 3 == $blog_id ):?>
+
+							<li><a href="javascript:;"><span>AU</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/AU-Australia-Flag-icon.png"/></a></li>
+							<li><a href="https://ecins.com/?domain=uk"><span>UK</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/GB-United-Kingdom-Flag-icon.png" /></a></li>
+							<li><a href="https://ecins.com/us/?domain=us"><span>US</span><img class="flag" src="<?php echo get_template_directory_uri(); ?>/img/usa.png" /></a></li>
+						
+						<?php endif;?>
+						
 					</ul>
 				</nav>
 				
