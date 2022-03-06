@@ -189,6 +189,10 @@ jQuery( function ( $ ) {
 			args.type = 'resources';
 		}
 
+		if ( $( 'body' ).hasClass( 'blog' ) ) {
+			args.type = 'news';
+		}
+
 		if ( $( 'body' ).hasClass( 'page-press' ) ) {
 			args.type = 'press';
 		}

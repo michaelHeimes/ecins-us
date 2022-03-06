@@ -1,0 +1,122 @@
+{
+    "key": "group_62237fb6d409b",
+    "title": "Events Introduction",
+    "fields": [
+        {
+            "key": "field_62237fb6f136b",
+            "label": "Hero Copy",
+            "name": "hero_copy_events",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_62237fb6f1376",
+            "label": "Hero Image",
+            "name": "hero_image_events",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_62237fb6f137d",
+            "label": "Page Intro Heading",
+            "name": "page_intro_heading_events",
+            "type": "text",
+            "instructions": "Add a page intro heading for the Events.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_62237fb6f1384",
+            "label": "Page Intro Copy",
+            "name": "page_intro_events",
+            "type": "wysiwyg",
+            "instructions": "Add a page intro for the Events.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_62237fb6f138c",
+            "label": "Video",
+            "name": "video_events",
+            "type": "oembed",
+            "instructions": "Add an optional video to the News. This will appear above the feed of articles. Leave the field blank to hide this module. (First upload the video to YouTube\/Vimeo account then copy the video link and paste in here. This will allow the video to be played directly within the page.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Add hero banner, page intro and optional video to Resources.",
+    "show_in_rest": 0,
+    "modified": 1646494071
+}
