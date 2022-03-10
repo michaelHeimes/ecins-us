@@ -168,6 +168,59 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_62277cd97c957",
+            "label": "Webinar",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6227846bb2d98",
+            "label": "Webinar Name",
+            "name": "webinar_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_62277ce57c958",
+            "label": "Webinar Date",
+            "name": "webinar_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
         }
     ],
     "location": [
@@ -187,5 +240,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636039387
+    "show_in_rest": 0,
+    "modified": 1646756986
 }

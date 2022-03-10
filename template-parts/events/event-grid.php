@@ -3,11 +3,8 @@
 		<div class="content-grid--inner">
 			<div class="content-grid--results">
 				<?php	
-					
-				$today = date('Ymd');
-					
 				$args = array(  
-				    'post_type' => 'event',
+				    'post_type' => 'resource',
 				    'post_status' => 'publish',
 				    'meta_key'  => 'webinar_date',
 				    'orderby'   => 'meta_value_num',
@@ -15,8 +12,8 @@
 					'posts_per_page' => 99999,
 					'tax_query'      => array(
 						array(
-							'taxonomy' => 'event-type',
-							'terms'    => 'webinar',
+							'taxonomy' => 'resource-type',
+							'terms'    => 'webinars',
 							'field'    => 'slug',
 							'operator' => 'IN',
 						),

@@ -71,9 +71,9 @@ function ecins_get_news( $data ) {
 	while ( $query->have_posts() ) {
 		$query->the_post();
 
-		// get the Case Study Type tax
+		// get the News Type tax
 		$type_names = array();
-		$types      = get_the_terms( get_the_ID(), 'news-type' );
+		$types      = get_the_terms( get_the_ID(), 'news-type');
 
 		if ( $types ) {
 			foreach ( $types as $type ) {
@@ -85,16 +85,16 @@ function ecins_get_news( $data ) {
 			}
 		}
 
-		// get the Cat tax
-		$cat_names = array();
-		$cats      = get_the_terms( get_the_ID(), 'news-cat' );
+		// get the News Country tax
+		$country_names = array();
+		$countries      = get_the_terms( get_the_ID(), 'news-country');
 
-		if ( $cats ) {
-			foreach ( $cats as $cat ) {
-				$type_names[] = array(
-					'name' => $cat->name,
-					'slug' => $cat->slug,
-					'id'   => $cat->term_id,
+		if ( $countries ) {
+			foreach ( $countries as $country ) {
+				$country_names[] = array(
+					'name' => $country->name,
+					'slug' => $country->slug,
+					'id'   => $country->term_id,
 				);
 			}
 		}
@@ -148,14 +148,17 @@ function ecins_get_news( $data ) {
 				'types'  => $type_names,
 			);
 		}
-		foreach ( $cat_names as $cat_name ) {
-			$out[ 'data' ][ $cat_name[ 'id' ] ][ 'title' ] = $cat_name[ 'name' ];
-			$out[ 'data' ][ $cat_name[ 'id' ] ][] = array(
-				'cat-names'  => $cat_names,
+		foreach ( $country_names as $country_name ) {
+			$out[ 'data' ][ $country_name[ 'id' ] ][ 'title' ] = $country_name[ 'name' ];
+			$out[ 'data' ][ $country_name[ 'id' ] ][] = array(
+				'title'  => $news_title,
+				'link'   => $permalink,
+				'target' => false,
+				'desc'   => false, // wpautop( $excerpt ),
+				'image'  => $image,
+				'types'  => $type_names,
 			);
 		}
-
-
 	};
 
 	$out[ 'meta' ] = array(

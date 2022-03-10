@@ -3,15 +3,22 @@
 $news_types = get_terms( 'news-type', array(
 	'hide_empty' => true,
 ) );
+$news_cats = get_terms( 'news-cat', array(
+	'hide_empty' => true,
+) );
 
 $get_types = array();
+$get_cats = array();
 
 foreach ( $news_types as $type ) {
 	$get_types[] = $type->term_id;
 }
+foreach ( $news_cats as $news_cat ) {
+	$get_cats[] = $news_cat->term_id;
+}
 
 $get_news = new WP_Query( array(
-	'post_type'      => array( 'post' ),
+	'post_type'      => array( 'news' ),
 	'posts_per_page' => -1,
 	'tax_query'      => array(
 		array(
@@ -21,13 +28,32 @@ $get_news = new WP_Query( array(
 			'operator' => 'IN',
 		),
 	),
+	'tax_query'      => array(
+		array(
+			'taxonomy' => 'news-cat',
+			'terms'    => $get_cats,
+			'field'    => 'term_id',
+			'operator' => 'IN',
+		),
+	),
 ) );
 
 $sorted_news = [];
+$subsorted_news = [];
 
 if ( $get_news->have_posts() ) {
 	while ( $get_news->have_posts() ) {
 		$get_news->the_post();
+		
+		foreach ( $news_cats as $news_cat ) {
+			if ( has_term( $news_cat->term_id, 'news-cat', get_the_ID() ) ) {
+				if ( ! array_key_exists( $news_cat->name, $subsorted_news ) ) {
+					$subsorted_news[ $news_cat->name ] = array();
+				}
+
+				$subsorted_news[ $news_cat->name ][] = $post;
+			}			
+		}
 
 		foreach ( $news_types as $type ) {
 			if ( has_term( $type->term_id, 'news-type', get_the_ID() ) ) {
@@ -42,6 +68,8 @@ if ( $get_news->have_posts() ) {
 
 	wp_reset_postdata();
 }
+
+//var_dump($sorted_news);
 
 $news_grid_classes = array( 'content-grid' );
 
@@ -71,71 +99,98 @@ if ( is_front_page() || is_home() ) {
 			</div>
 		</div>
 		<div class="content-grid--results">
-			<?php foreach ( $sorted_news as $tax_name => $news ) { ?>
-				<div class="results">
+				<div class="results uk">
 					<div class="results--title">
-						<?php echo $tax_name; ?>
-					</div>
-
+						UK
+					</div>					
 					<?php
-					foreach ( $news as $news_post ) {
-						$permalink      = get_the_permalink( $news_post->ID );
-						$thumbnail_id   = $GLOBALS[ 'ecins_default_thumbnail' ]; // default thumbnail image.
-						$news_title = get_field( 'hero_title', $news_post->ID );
-						$excerpt        = strip_tags( $news_post->post_content );
-						$gated_form     = get_field('news_gravity_form', $news_post->ID);
-						$embedded_form     = get_field('embedded_form', $news_post->ID);
 						
-						if (get_field('news_file', $news_post->ID) && !$gated_form) {
-							$news_file = get_field('news_file', $news_post->ID);
-							$permalink     = $news_file ? wp_get_attachment_url($news_file) : '#';
+					foreach ( $news_cats as $news_cat ) {
+						//var_dump($news_cat);
+						$get_cat_news = new WP_Query( array(
+							'post_type'      => array( 'news' ),
+							'posts_per_page' => -1,
+							'tax_query'      => array(
+								'relation' => 'AND',
+								array(
+									'taxonomy' => 'news-type',
+									'terms'    => 61,
+									'field'    => 'term_id',
+									'operator' => 'IN',
+								),
+								array(
+									'taxonomy' => 'news-cat',
+									'terms'    => $news_cat->term_id,
+									'field'    => 'term_id',
+									'operator' => 'IN',
+								),
+							),
+						) );?>
+							<div class="results--title"><?php echo $news_cat->name;?></div>
+						<?php					
+						if ( $get_cat_news->have_posts() ) {
+							while ( $get_cat_news->have_posts() ) {
+								$get_cat_news->the_post();
+						
+						
+								$permalink      = get_the_permalink( $news_post->ID );
+								$thumbnail_id   = $GLOBALS[ 'ecins_default_thumbnail' ]; // default thumbnail image.
+								$news_title = get_field( 'hero_title', $news_post->ID );
+								$excerpt        = strip_tags( $news_post->post_content );
+								$gated_form     = get_field('news_gravity_form', $news_post->ID);
+								$embedded_form     = get_field('embedded_form', $news_post->ID);
+								
+								if (get_field('news_file', $news_post->ID) && !$gated_form) {
+									$news_file = get_field('news_file', $news_post->ID);
+									$permalink     = $news_file ? wp_get_attachment_url($news_file) : '#';
+								}
+		
+								if (get_field('news_file', $news_post->ID) && get_field('embedded_form', $news_post->ID) ) {
+									$news_file = get_field('news_file', $news_post->ID);
+									$permalink      = get_the_permalink( $news_post->ID );							
+								}
+		
+								if (get_field('news_cover_image', $news_post->ID)) {
+									$thumbnail_id = get_field('news_cover_image', $news_post->ID);
+								}						
+		
+		
+								if ( has_post_thumbnail( $news_post->ID ) ) {
+									$thumbnail_id = get_post_thumbnail_id( $news_post->ID );
+								}
+		
+								if ( empty( $news_title ) ) {
+									$news_title = get_the_title( $news_post->ID );
+								}
+		
+								if ( strlen( $excerpt ) > 150 ) {
+									$excerpt = trim( substr( $excerpt, 0, 150 ) ) . '...';
+								}
+								?>
+								<a href="<?php echo $permalink; ?>" class="content-card">
+									<div class="content-card--box">
+										<div class="content-card--image">
+											<?php echo wp_get_attachment_image( $thumbnail_id, 'news_card', false, array( 'alt' => $news_title ) ); ?>
+										</div>
+										<div class="content-card--title">
+											<?php echo $news_title; ?>
+										</div>
+										<?php /*
+										<div class="content-card--desc">
+											<?php echo wpautop( $excerpt ); ?>
+										</div>
+										*/ ?>
+										<div class="content-card--link">
+											<span>Read More</span>
+										</div>
+									</div>
+								</a>
+								<?php
+							}
 						}
-
-						if (get_field('news_file', $news_post->ID) && get_field('embedded_form', $news_post->ID) ) {
-							$news_file = get_field('news_file', $news_post->ID);
-							$permalink      = get_the_permalink( $news_post->ID );							
-						}
-
-						if (get_field('news_cover_image', $news_post->ID)) {
-							$thumbnail_id = get_field('news_cover_image', $news_post->ID);
-						}						
-
-
-						if ( has_post_thumbnail( $news_post->ID ) ) {
-							$thumbnail_id = get_post_thumbnail_id( $news_post->ID );
-						}
-
-						if ( empty( $news_title ) ) {
-							$news_title = get_the_title( $news_post->ID );
-						}
-
-						if ( strlen( $excerpt ) > 150 ) {
-							$excerpt = trim( substr( $excerpt, 0, 150 ) ) . '...';
-						}
-						?>
-						<a href="<?php echo $permalink; ?>" class="content-card">
-							<div class="content-card--box">
-								<div class="content-card--image">
-									<?php echo wp_get_attachment_image( $thumbnail_id, 'news_card', false, array( 'alt' => $news_title ) ); ?>
-								</div>
-								<div class="content-card--title">
-									<?php echo $news_title; ?>
-								</div>
-								<?php /*
-								<div class="content-card--desc">
-									<?php echo wpautop( $excerpt ); ?>
-								</div>
-								*/ ?>
-								<div class="content-card--link">
-									<span>Read More</span>
-								</div>
-							</div>
-						</a>
-
-					<?php } ?>
+					}?>
 
 				</div>
-			<?php } ?>
 		</div>
 
 		<?php

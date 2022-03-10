@@ -137,9 +137,11 @@ jQuery( function ( $ ) {
 		this.displayPosts = function ( posts ) {
 			var self    = this,
 				results = '';
-
+			
 			Object.keys( posts ).forEach( ( key ) => {
-				var result = '<div class="results"><div class="results--title">' + posts[ key ].title + '</div>';
+					console.log(posts);
+				
+				var result = '<div class="results"><div class="results--title hi">' + posts[ key ].title + '</div>';
 
 				Object.keys( posts[ key ] ).forEach( ( k ) => {
 					if ( k !== 'title' ) {
@@ -189,7 +191,7 @@ jQuery( function ( $ ) {
 			args.type = 'resources';
 		}
 
-		if ( $( 'body' ).hasClass( 'blog' ) ) {
+		if ( $( 'body' ).hasClass( 'post-type-archive-news' ) ) {
 			args.type = 'news';
 		}
 
