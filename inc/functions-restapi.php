@@ -85,20 +85,6 @@ function ecins_get_news( $data ) {
 			}
 		}
 
-		// get the Cat tax
-		$cat_names = array();
-		$cats      = get_the_terms( get_the_ID(), 'news-cat' );
-
-		if ( $cats ) {
-			foreach ( $cats as $cat ) {
-				$type_names[] = array(
-					'name' => $cat->name,
-					'slug' => $cat->slug,
-					'id'   => $cat->term_id,
-				);
-			}
-		}
-
 		$news_title = get_field( 'hero_title', get_the_ID() );
 
 		if ( empty( $news_title ) ) {
@@ -148,14 +134,6 @@ function ecins_get_news( $data ) {
 				'types'  => $type_names,
 			);
 		}
-		foreach ( $cat_names as $cat_name ) {
-			$out[ 'data' ][ $cat_name[ 'id' ] ][ 'title' ] = $cat_name[ 'name' ];
-			$out[ 'data' ][ $cat_name[ 'id' ] ][] = array(
-				'cat-names'  => $cat_names,
-			);
-		}
-
-
 	};
 
 	$out[ 'meta' ] = array(

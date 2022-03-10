@@ -313,7 +313,26 @@ if (function_exists('acf_add_options_page')) {
 		'redirect'		=> false,
 		'show_in_graphql' => true,
 	));
-
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Blog',
+		'menu_title'	=> 'Blog',
+		'parent_slug'	=> 'theme-general-settings',
+	));	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'eBook',
+		'menu_title'	=> 'eBook',
+		'parent_slug'	=> 'theme-general-settings',
+	));	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Events',
+		'menu_title'	=> 'Events',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'News',
+		'menu_title'	=> 'News',
+		'parent_slug'	=> 'theme-general-settings',
+	));
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Products',
 		'menu_title'	=> 'Products',
@@ -325,28 +344,12 @@ if (function_exists('acf_add_options_page')) {
 		'menu_title'	=> 'Request Demo',
 		'parent_slug'	=> 'theme-general-settings',
 	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'eBook',
-		'menu_title'	=> 'eBook',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'News',
-		'menu_title'	=> 'News',
-		'parent_slug'	=> 'theme-general-settings',
-	));
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Resources',
 		'menu_title'	=> 'Resources',
 		'parent_slug'	=> 'theme-general-settings',
 	));
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Events',
-		'menu_title'	=> 'Events',
-		'parent_slug'	=> 'theme-general-settings',
-	));
+
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Subscribe',
 		'menu_title'	=> 'Subscribe',

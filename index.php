@@ -20,9 +20,9 @@ get_header();
 	<main id="main" class="site-main">
 		<?php
 
-		get_template_part('template-parts/news/hero-banner');
-		get_template_part('template-parts/news/page-intro');
-		get_template_part('template-parts/news/video');
+		get_template_part('template-parts/blog/hero-banner');
+		get_template_part('template-parts/blog/page-intro');
+		get_template_part('template-parts/blog/video');
 		
 
 		if (have_posts()) :
@@ -38,13 +38,13 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				//get_template_part('template-parts/content', get_post_type());
+				get_template_part('template-parts/content', get_post_type());
 
 			endwhile;
 
 			$args = array(
-				'prev_text'          => 'Previous News',
-				'next_text'          => 'Next News',
+				'prev_text'          => 'Previous Blog',
+				'next_text'          => 'Next Blog',
 				'screen_reader_text' => 'News navigation'
 			);
 			the_posts_navigation($args);
@@ -58,16 +58,6 @@ get_header();
 		echo '</div>';
 		?>
 		
-		<div class="content-grid-wrapper">
-			<div class="wrapper--inner">
-			<?php
-			
-			get_template_part('template-parts/news/news', 'grid')
-
-			?>
-			</div>
-		</div>
-
 		<?php get_template_part('template-parts/testimonials/testimonial'); ?>
 
 	</main><!-- #main -->
