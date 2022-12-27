@@ -17,7 +17,7 @@
           <div class="location__content">
             <h3 class="section-title location__title"><?php the_sub_field('location_title'); ?></h3>
             <p><?php the_sub_field('location_address'); ?></p>
-            <p>Tel: <?php the_sub_field('location_telephone'); ?></p>
+            <p>Tel: <a href="tel:<?php the_sub_field('location_telephone'); ?>"><?php the_sub_field('location_telephone'); ?></a></p>
 
             <?php if (get_sub_field('location_additional_details')) : ?>
               <p class="location__additionals"><?php the_sub_field('location_additional_details'); ?></p>

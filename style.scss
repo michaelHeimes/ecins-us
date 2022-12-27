@@ -1363,10 +1363,6 @@ button.accordionButton .icon__chevron--down { position: relative; top: 3px; marg
 
 .products-simple a { text-decoration: none; color: #000; }
 
-.products-simple li { -webkit-box-flex: 1; -ms-flex: 1 1 50%; flex: 1 1 50%; text-align: center; padding: 1rem 0; }
-
-@media (min-width: 768px) { .products-simple li { padding: 2rem 0; -webkit-box-flex: 0; -ms-flex: 0 1 33%; flex: 0 1 33%; } }
-
 .products-simple__btn { margin: 0 auto 0.5rem; background-color: blue; border-radius: 50%; width: 85px; height: 85px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
 
 @media (min-width: 960px) { .products-simple__btn { width: 105px; height: 105px; } }
@@ -1452,7 +1448,7 @@ a .products-detailed__btn { color: #fff; }
 
 .cta, .image-wcustom-color-background { background-color: #d1e1e7; padding-top: 2rem; padding-bottom: 2rem; text-align: center; }
 
-@media (min-width: 768px) { .cta, .case-study-cta, .image-wcustom-color-background { padding-top: 3rem; padding-bottom: 3rem; } }
+.cta, .case-study-cta, .image-wcustom-color-background { padding-top: 3rem; padding-bottom: 3rem; }
 
 @media (min-width: 1120px) { .cta, .case-study-cta, .image-wcustom-color-background { padding-top: 4rem; padding-bottom: 4rem; } }
 
@@ -1682,6 +1678,10 @@ $circles-break: 870px;
 	}
 
 body {
+	
+	h1, h2, h3, h4, h5, h6 {
+		overflow-wrap: normal;
+	}
 	
 	.gfield {
 		text-align: left;
@@ -2347,6 +2347,24 @@ body {
 			}
 						
 		}
+		ul.products-simple {
+			margin-left: -.75rem;
+			margin-right: -.75rem;
+			li { 
+				flex: 1 0 calc(50% - 2rem);
+				text-align: center;
+				padding: 1rem;
+			}
+			
+			@media (min-width: 768px) {
+				margin-left: -1rem;
+				margin-right: -1rem;
+				li { 
+					padding: 1 0 calc(50% - 1.5rem);
+					flex: 0 1 33%; 
+				}
+			}
+		}
 	}
 	
 	.word-art {
@@ -2415,9 +2433,11 @@ body {
 			position: relative;
 
 			a.btn {
-				position: absolute;
-				right: 20px;
-			    bottom: -10px;
+				@include min($md) {
+					position: absolute;
+					right: 20px;
+			    	bottom: -10px;
+				}
 			}
 			
 		}
@@ -3442,10 +3462,17 @@ body {
 		.section-title,
 		p {
 			text-align: left;
+			a {
+				text-decoration: none;
+				color: #6d6e71;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }
-
+&.page-template-default .resources-module,
 &.blog,
 &.post-type-archive-news,
 &.post-type-archive-resource,
@@ -3843,6 +3870,19 @@ body {
 		margin-top: 0;
 	}
 		
+}
+
+&.page-template-default .resources-module {
+	border-bottom: 2px solid #943573;
+	.content-grid .content-grid--results {
+		flex: 0 1 100%;
+		.results {
+			justify-content: center;
+		}
+		h2 {
+			margin-bottom: 1.9em;
+		}
+	}
 }
 
 &.single-resource {

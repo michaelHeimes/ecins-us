@@ -47,6 +47,10 @@ if (have_rows('flexible_content')) :
     elseif (get_row_layout() == 'rich_text') :
 
       get_template_part('template-parts/flexible-modules/rich-text');
+      
+    elseif (get_row_layout() == 'resources') :
+      
+      get_template_part('template-parts/flexible-modules/resources');
 
     elseif (get_row_layout() == 'word_art') :
 
