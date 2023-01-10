@@ -1025,6 +1025,20 @@ a:hover, a:active { outline: 0; }
 
 .widget select { max-width: 100%; }
 
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;  
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -1088,11 +1102,26 @@ embed, iframe, object { max-width: 100%; }
 
 .site-branding { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
 
-.site-title { display: inline-block; background-image: url(img/ecins-logo.png); background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), url(img/ecins-logo.svg); background-image: linear-gradient(transparent, transparent), url(img/ecins-logo.svg); background-repeat: no-repeat; background-size: contain; text-indent: 100%; white-space: nowrap; overflow: hidden; margin: 0; padding: 0; width: 160px; height: 30px; }
+.site-title { 
+	margin: 0; 
+	padding: 0; 
+	width: 160px; 
+	// height: 30px; 
+}
 
-@media (min-width: 960px) { .site-title { width: 200px; height: 37px; } }
+@media (min-width: 960px) { 
+	.site-title { 
+		width: 200px; 
+		// height: 37px; 
+	} 
+}
 
-@media (min-width: 1280px) { .site-title { width: 240px; height: 45px; } }
+@media (min-width: 1280px) { 
+	.site-title { 
+		width: 240px; 
+		// height: 45px; 
+	} 
+}
 
 .header-utilities { position: absolute; z-index: 999; top: 0; left: 0; right: 0; display: none; }
 

@@ -107,13 +107,29 @@
 					if (is_front_page() && is_home()) :
 					?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<h1 class="site-title"><?php bloginfo('name'); ?></h1>
+							<h1 class="site-title">
+								<span class="sr-only"><?php bloginfo('name'); ?></span>
+								<?php 
+								$image = get_field('header_logo', 'option');
+								if( !empty( $image ) ): ?>
+									<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								<?php endif; ?>
+							</h1>
 						</a>
 					<?php
 					else :
 					?>
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<p class="site-title"><?php bloginfo('name'); ?></p>
+							<p class="site-title">
+								<span class="sr-only">
+									<?php bloginfo('name'); ?>
+								</span>
+								<?php 
+								$image = get_field('header_logo', 'option');
+								if( !empty( $image ) ): ?>
+									<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								<?php endif; ?>
+							</p>
 						</a>
 					<?php endif; ?>
 				</div><!-- .site-branding -->
