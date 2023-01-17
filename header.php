@@ -42,6 +42,7 @@
 		gtag('config', 'G-8EYB07SPER');
 		gtag('config', 'G-2PD0H95JSN');
 		</script>
+		<script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('p1e024Bz32Q4GB6d'); </script>
 	<?php endif;?>
 	
 	<?php if ( 3 == $blog_id ):?>
