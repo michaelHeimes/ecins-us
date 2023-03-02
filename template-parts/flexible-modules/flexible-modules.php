@@ -111,6 +111,18 @@ if (have_rows('flexible_content')) :
     elseif (get_row_layout() == 'simple_title_banner') :
 
       get_template_part('template-parts/flexible-modules/simple-banner');
+      
+    elseif (get_row_layout() == 'white_card_cta_grid') :
+    
+      get_template_part('template-parts/flexible-modules/white-card-cta-grid');
+
+    elseif (get_row_layout() == 'feature_spotlight') :
+      
+      get_template_part('template-parts/flexible-modules/feature-spotlight');
+
+    elseif (get_row_layout() == 'logos_slider_optional_linking') :
+      
+      get_template_part('template-parts/flexible-modules/logos-slider-optional-linking');
 
     endif;
 

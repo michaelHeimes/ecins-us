@@ -29,7 +29,9 @@ $spacing = get_sub_field('spacing');
                     <div class="results">
                       <?php foreach( $resources as $resource ): 
                       $permalink = get_the_permalink( $resource->ID );
-                      $thumbnail_id   = $GLOBALS[ 'ecins_default_thumbnail' ]; // default thumbnail image.
+                      if( !empty($GLOBALS[ 'ecins_default_thumbnail' ]) ) {
+                        $thumbnail_id   = $GLOBALS[ 'ecins_default_thumbnail' ]; // default thumbnail image.
+                      }
                       $resource_title = get_field( 'hero_title', $resource->ID );
                       $excerpt        = strip_tags( $resource->post_content );
                       $gated_form     = get_field('resource_gravity_form', $resource->ID);

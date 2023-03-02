@@ -55,6 +55,30 @@
 		    }
 		  ]
 	});
+	
+	$('.logos-linked-slider').slick({
+		infinite: true,
+		dots: false,
+		speed: 500,
+		fade: false,
+		arrows: false,
+		dots: true,
+		autoplay: false,
+		autoplaySpeed: 5000,
+		cssEase: 'ease',
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		rows: 0,
+		  responsive: [
+			{
+			  breakpoint: 550,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2,
+			  }
+			}
+		  ]
+	});
   
   // ----------------------------------------
   // Smooth Scroll
