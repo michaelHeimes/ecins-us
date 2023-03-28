@@ -920,7 +920,23 @@ a:hover, a:active { outline: 0; }
 
 .main-navigation ul { list-style: none; margin: 0; padding-left: 0; }
 
-.main-navigation ul ul { float: left; position: absolute; top: 100%; left: -999em; z-index: 99999; background-color: #d1e1e7; padding: 0.5rem 0; border-top: 28px solid #fff; }
+.main-navigation ul ul { 
+	float: left; 
+	position: absolute; 
+	top: 100%; 
+	left: -999em; 
+	z-index: 99999; 
+	background-color: #d1e1e7; 
+	padding: 0.5rem 0; 
+}
+
+.main-navigation ul > ul { 
+	border-top: 28px solid #fff; 
+}
+
+.main-navigation ul > ul > ul { 
+	border-top: 10px solid #fff; 
+}
 
 .main-navigation ul ul ul { left: -999em; top: 0; }
 
