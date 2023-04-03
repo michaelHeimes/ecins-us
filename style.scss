@@ -898,7 +898,39 @@ a:hover, a:active { outline: 0; }
 
 .offcanvas-cta p { margin: 0; }
 
-.offcanvas-cta a.request-demo, .offcanvas-cta a.request-ebook { margin: 0.5rem 0; text-align: center; width: 100%; font-size: 16px; font-size: 1rem; border-bottom: none; color: #fff; }
+.offcanvas-cta a.request-demo, .offcanvas-cta a.request-ebook, .offcanvas-cta .request-demo > a { margin: 0.5rem 0; text-align: center; width: 100%; font-size: 16px; font-size: 1rem; border-bottom: none; color: #fff; }
+
+.offcanvas-cta .request-demo.trial {
+	position: fixed;
+	right: 0;
+	top: 65%;
+	a {
+		display: block;
+		background-color: #58B947;
+		color: #fff;
+		border-radius: 8px 0 0 8px;
+		font-weight: 500;
+		font-size: 14px;
+		color: #FFFFFF;
+		line-height: 1.166;
+		max-width: 177px;
+		text-align: left;
+		padding: .75rem 1rem;
+		box-shadow: 0px 2px 10px 0px #8E8E8E;
+		text-decoration: none;
+		
+		@media screen and (min-width: 768px) {
+			font-size: 24px;
+			padding: 1.75rem 2rem;
+		}
+			
+		&:hover {
+			border-color: #1A6887;
+			background: #1A6887;
+		}
+	}
+}
+
 
 .offcanvas-cta .client-login { margin: 0.5rem 0; }
 

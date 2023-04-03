@@ -14,6 +14,19 @@
 
 </div><!-- #content -->
 
+<?php if( !empty(get_field('sticky_cta_text')) && !empty(get_field('sticky_cta_page')) ):
+	$text = get_field('sticky_cta_text');
+	$link = get_field('sticky_cta_page');
+?>
+	<div class="offcanvas-cta">
+		<p class="request-demo trial">
+			<a href="<?php echo $link;?>">
+				<span><?php echo $text;?></span>
+			</a>
+		</p>
+	</div>
+<?php endif;?>
+
 <footer id="colophon" class="footer">
 
 	<div class="wrapper--outer">
